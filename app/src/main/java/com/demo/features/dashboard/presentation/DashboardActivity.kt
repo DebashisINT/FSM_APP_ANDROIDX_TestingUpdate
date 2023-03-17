@@ -7830,13 +7830,14 @@ class DashboardActivity : BaseActivity(), View.OnClickListener, BaseNavigation, 
             })
             simpleDialog.show()
 
-        }else if(getFragment() != null && getFragment() is ViewAllOrderListFragment && Pref.IsShowNewOrderCart){
+        }
+        /*else if(getFragment() != null && getFragment() is ViewAllOrderListFragment && Pref.IsShowNewOrderCart){
             progress_wheel.spin()
             loadFragment(FragType.NearByShopsListFragment, false, "")
             Handler().postDelayed(Runnable {
                 progress_wheel.stopSpinning()
             }, 1000)
-        }
+        }*/
         /*Date 14-09-2021*/
         else if (getFragment() != null && getFragment() is NewOrderScrOrderDetailsFragment) {
             loadFragment(FragType.DashboardFragment, false, DashboardType.Home)
