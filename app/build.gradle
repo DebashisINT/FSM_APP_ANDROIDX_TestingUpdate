@@ -19,7 +19,7 @@ apply plugin: 'de.undercouch.download'
 android {
 
     compileSdkVersion 33
-    buildToolsVersion "33.0.0"
+//    buildToolsVersion "33.0.0"
     defaultConfig {
         applicationId "com.demo"
         minSdkVersion 26
