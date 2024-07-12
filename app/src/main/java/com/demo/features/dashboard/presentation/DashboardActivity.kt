@@ -11,6 +11,7 @@ import android.app.PendingIntent
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
 import android.content.*
+import android.content.Context.RECEIVER_EXPORTED
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -1418,8 +1419,8 @@ class DashboardActivity : BaseActivity(), View.OnClickListener, BaseNavigation, 
         networkIntentFilter.addAction(LocationManager.PROVIDERS_CHANGED_ACTION)
         registerReceiver(gpsReceiver, networkIntentFilter);
 
-        registerReceiver(broadcastReceiver, filter)
-        //registerReceiver(geoFenceBroadcast, IntentFilter())
+        //registerReceiver(broadcastReceiver, filter)
+        mContext.registerReceiver(broadcastReceiver, filter , RECEIVER_EXPORTED)        //registerReceiver(geoFenceBroadcast, IntentFilter())
         //checkToShowAddAttendanceAlert()
 
         callUnreadNotificationApi()
